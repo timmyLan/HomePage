@@ -1,0 +1,28 @@
+{{!< default}}
+<section id="banner">
+    <h2>产品展示</h2>
+</section>
+
+<!-- Main -->
+<section id="main" class="container">
+{{#if galleries}}
+    <div class="row">
+		{{#each galleries}}
+            <div class="6u 12u(narrower)">
+                <section class="box special">
+			{{#if heroImage}}
+                    <span class="image featured"><img src="{{cloudinaryUrl heroImage}}" alt="" /></span>
+			{{/if}}
+                    <h3>{{name}}</h3>
+                    <ul class="actions">
+                        <li><a href="#" class="button alt">详情</a></li>
+                    </ul>
+                </section>
+            </div>
+		{{/each}}
+	</div>
+{{else}}
+    <!-- else -->
+    <h3 class="text-muted">很遗憾~暂时没有产品可以展示。</h3>
+{{/if}}
+</section>

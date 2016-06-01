@@ -1,0 +1,32 @@
+{{!< default}}
+<section id="banner">
+    <h2>产品详情</h2>
+    <p>一共 {{ data.posts.results.length}} 个产品详情 ...</p>
+</section>
+
+<!-- Main -->
+<section class="container">
+    <div class="row">
+		<div class="8u 12u(narrower)">
+            <div class="blog">
+				{{# each data.posts.results}}
+                    <div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
+                        <h2><a href="{{postUrl slug}}">{{{title}}}</a></h2>
+						{{#if image}}<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img pull-right">{{/if}}
+                        <p>{{{content.brief}}}</p>
+						{{#if content.extended}}<p class="read-more"><a href="{{postUrl slug}}">Read more...</a></p>{{/if}}
+                    </div>
+				{{/each}}
+            </div>
+		</div>
+        <div class="4u 8u(narrower)">
+            <div style="margin-top: 70px;" class="list-group">
+                <a class="button special fit small" href="/detail">所有分类</a>
+				{{# each data.categories }}
+                    <a href="{{categoryUrl key}}" class="button alt fit small">{{name}}</a>
+				{{/each}}
+            </div>
+        </div>
+	</div>
+	{{>pagination}}
+</section>
