@@ -8,7 +8,8 @@
  * modules in your project's /lib directory.
  */
 var _ = require('underscore');
-
+var http = require("http");
+var url = require("url");
 
 /**
 	Initialises the standard view locals
@@ -24,6 +25,12 @@ exports.initLocals = function (req, res, next) {
 		{ label: '联系我们', key: 'contact', href: '/contact' },
 	];
 	res.locals.user = req.user;
+	var pathname =  url.parse(req.url).pathname;
+	if(pathname == '/'){
+		res.locals.isHome = true;
+	}else{
+		res.locals.isHome = false;
+	}
 	next();
 };
 

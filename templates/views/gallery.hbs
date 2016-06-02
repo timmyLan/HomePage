@@ -1,49 +1,48 @@
-{{!< default}}
-<section id="banner">
-    <h2>产品展示</h2>
-</section>
-
 <!-- Main -->
-<section id="main" class="container">
-{{#if galleries}}
-    <div class="row">
-		{{#each galleries}}
-            <div class="6u 12u(narrower)">
-                <section class="box special">
-			{{#if heroImage}}
-                    <span class="image featured"><img src="{{cloudinaryUrl heroImage}}" alt="" /></span>
-			{{/if}}
-                    <h3>{{name}}</h3>
-                    <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target=".{{_id}}">详情</button>
-                </section>
-            </div>
-			<!--Modal-->
-            <div class="modal fade {{_id}}" tabindex="-1" role="dialog" aria-labelledby="{{name}}">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">{{name}}</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-							{{#each images}}
-                            	<div class="col-md-3">
-                                    <a href="{{url}}" target="_blank"><img src="{{url}}"></a>
-								</div>
-							{{/each}}
+<section id="main" class="container 75%">
+    <header>
+        <h2>产品展示</h2>
+		<p>AmwaresECU仿真系统</p>
+    </header>
+	{{#if galleries}}
+		<div class="row">
+			{{#each galleries}}
+				<div class="6u 12u(narrower)">
+					<section class="box special">
+				{{#if heroImage}}
+						<span class="image featured"><img src="{{cloudinaryUrl heroImage}}" alt="" /></span>
+				{{/if}}
+						<h3>{{name}}</h3>
+						<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target=".{{_id}}">详情</button>
+					</section>
+				</div>
+				<!--Modal-->
+				<div class="modal fade {{_id}}" tabindex="-1" role="dialog" aria-labelledby="{{name}}">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title">{{name}}</h4>
 							</div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-		{{/each}}
-	</div>
-{{else}}
-    <!-- else -->
-    <h3 class="text-muted">很遗憾~暂时没有产品可以展示。</h3>
-{{/if}}
+							<div class="modal-body">
+								<div class="row">
+								{{#each images}}
+									<div class="col-md-3">
+										<a href="{{url}}" target="_blank"><img src="{{url}}"></a>
+									</div>
+								{{/each}}
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			{{/each}}
+		</div>
+	{{else}}
+		<!-- else -->
+		<h3 class="text-muted">很遗憾~暂时没有产品可以展示。</h3>
+	{{/if}}
 </section>

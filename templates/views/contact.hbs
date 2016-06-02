@@ -1,10 +1,10 @@
 {{!< default}}
-<section id="banner">
-    <h2>联系我们</h2>
-    <p>告诉我们你所需要的...</p>
-</section>
 <!-- Main -->
 <section id="main" class="container 75%">
+    <header>
+        <h2>联系我们</h2>
+        <p>告诉我们你所需要的...</p>
+    </header>
     <div class="box">
         <ul class="alt">
 			<li>
@@ -27,4 +27,38 @@
 			</li>
 		</ul>
     </div>
+</section>
+<!-- CTA -->
+<section id="cta">
+
+    <h2>给我留言</h2>
+    <p>...</p>
+	<form method="post">
+        <input type="hidden" name="action" value="contact">
+		<div class="row uniform 50%">
+			<div class="6u 12u(mobilep)">
+				<input type="text" name="name.full" id="name" value="{{formData.[name.full]}}" placeholder="姓名" />
+			</div>
+			<div class="6u 12u(mobilep)">
+				<input type="email" name="email" id="email" value="{{formData.email}}" placeholder="邮箱" />
+			</div>
+		</div>
+		<div class="row uniform 50%">
+			<div class="12u">
+				<input type="text" name="phone" id="phone" value="{{formData.phone}}" placeholder="电话" />
+			</div>
+		</div>
+		<div class="row uniform 50%">
+			<div class="12u">
+				<textarea name="message" id="message" placeholder="留言信息..." rows="6"></textarea>
+			</div>
+		</div>
+		<div class="row uniform">
+			<div class="12u">
+				<ul class="actions align-center">
+					<li><input type="submit" value="发送信息" /></li>
+				</ul>
+			</div>
+		</div>
+	</form>
 </section>

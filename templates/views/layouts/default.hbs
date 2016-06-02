@@ -24,35 +24,33 @@
         <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
 	</head>
     <body class="landing">
-    	<div id="page-wrapper">
-            <!-- Header -->
-            <header id="header" class="alt">
-                <div class="container">
-					<h1><a href="/">Amwares</a></h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="/">主页</a></li>
-							<li>
-								<a href="#" class="icon fa-angle-down">更多</a>
-								<ul>
-									{{# each navLinks}}
-										<li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
-											<a href="{{ href }}">{{ label }}</a>
-										</li>
-									{{/each}}
-								</ul>
-							</li>
-							{{#if user}}
-								<li><a href="/keystone/signout" class="button">退出</a></li>
-							{{else}}
-								<li><a href="/keystone/signin" class="button">登录</a></li>
-							{{/if}}
+		<!-- Header -->
+		<header id="header" class="alt {{# if isHome}}isHome{{/if}}">
+			<div class="container">
+				<h1><a href="/">Amwares</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="/">主页</a></li>
+						<li>
+							<a href="#" class="icon fa-angle-down">更多</a>
+							<ul>
+								{{# each navLinks}}
+									<li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
+										<a href="{{ href }}">{{ label }}</a>
+									</li>
+								{{/each}}
+							</ul>
+						</li>
+						{{#if user}}
+							<li><a href="/keystone/signout" class="button">退出</a></li>
+						{{else}}
+							<li><a href="/keystone/signin" class="button">登录</a></li>
+						{{/if}}
 						</ul>
 					</nav>
 				</div>
-            </header>
-
-            <div id="body">
+			</header>
+			<section id="page-wrapper">
                 <!--
                     Flash messages allow you to display once-off status messages to users, e.g. form
                     validation errors, success messages, etc
@@ -83,8 +81,7 @@
 				{{/if}}
                 <!-- The content block should contain the body of your template's content-->
 				{{{body}}}
-            </div>
-			
+			</section>
 			<!-- Footer -->
 			<footer id="footer">
 				<ul class="icons">
@@ -99,7 +96,6 @@
 					<li>&copy; 2014 广州辂轺信息科技有限公司 版权所有</li>
 				</ul>
 			</footer>
-        </div>
 		{{!--
 			//- jQuery 1.11.3 is included by default, and required by both Bootstrap
 			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
