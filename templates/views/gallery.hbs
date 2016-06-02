@@ -26,11 +26,15 @@
 							</div>
 							<div class="modal-body">
 								<div class="row">
-								{{#each images}}
-									<div class="col-md-3">
-										<a href="{{url}}" target="_blank"><img src="{{url}}"></a>
-									</div>
-								{{/each}}
+								{{#if images}}
+									{{#each images}}
+										<div class="col-md-3">
+											<a href="{{url}}" target="_blank"><img src="{{url}}"></a>
+										</div>
+									{{/each}}
+								{{else}}
+									<p>很抱歉,该产品暂时没有详情,请 <a href="/contact">联系</a> 我们</p>
+								{{/if}}
 								</div>
 							</div>
 							<div class="modal-footer">
